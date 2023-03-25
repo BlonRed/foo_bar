@@ -9,3 +9,16 @@ This project implements 4 variants of the FooBar test task implementation:
 
 The implementation of the console application itself is located in the FooBarMain class.
 It checks values before passing them to methods and selects task implementations from 1 to 4.
+
+
+# FooBar
+## Тестовое задание Foo Bar.
+
+В этом проекте реализовано 4 варианта выполнения тестовой задачи FooBar:	
+- Первый вариант - обычный.	
+- Второй вариант с меньшим количеством ветвлений. 	
+- Третий вариант без цикла, рекурсивный. 	
+- Четвертый вариант реализован через оператор switch. 	
+
+Реализация самого консольного приложения находится в классе FooBarMain.
+Она проверяет значения перед передачей их в методы и выбирает реализацию задачи из 4 вариантов.
