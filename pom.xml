@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.blonred.test-task</groupId>
-    <artifactId>FooBar</artifactId>
+    <artifactId>foo_bar</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

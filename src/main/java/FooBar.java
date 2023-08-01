@@ -1,7 +1,37 @@
-import java.util.Scanner;
-
 public class FooBar {
-    public void fooBarVersion1(int n) {
+    public boolean processed(int number, int version) {
+        if (!isValid(number)) {
+            return false;
+        }
+        switch (version) {
+            case 1:
+                fooBarVersion1(number);
+                break;
+            case 2:
+                fooBarVersion2(number);
+                break;
+            case 3:
+                fooBarVersion3(number);
+                break;
+            case 4:
+                fooBarVersion4(number);
+                break;
+            default:
+                System.out.println("Value is 'version' invalid. Please choice value from 1 to 4.");
+                return false;
+        }
+        return true;
+    }
+
+    public static boolean isValid(int number){
+        if (number <= 0) {
+            System.out.println("Number less or equal 0. Try again.");
+            return false;
+        }
+        return true;
+    }
+
+    private void fooBarVersion1(int n) {
         int from = 1;
         for (int num = from; num <= n; num++) {
             if (num % 15 == 0) {
@@ -16,10 +46,10 @@ public class FooBar {
         }
     }
 
-    public void fooBarVersion2(int n) {
+    private void fooBarVersion2(int n) {
         int from = 1;
         for (int num = from; num <= n; num++) {
-           var result = "";
+            var result = "";
             if (num % 3 == 0) {
                 result += "Foo";
             }
@@ -30,7 +60,7 @@ public class FooBar {
         }
     }
 
-    public void fooBarVersion3(int n) {
+    private void fooBarVersion3(int n) {
         int num = n;
         var result = "";
 
@@ -50,7 +80,7 @@ public class FooBar {
         System.out.println(result);
     }
 
-    public void fooBarVersion4(int n) {
+    private void fooBarVersion4(int n) {
         int from = 1;
         int count;
         boolean foo, bar;
@@ -62,7 +92,7 @@ public class FooBar {
 
             if (foo) count++;
             if (bar) count++;
-            switch (count){
+            switch (count) {
                 case 1:
                     result = foo ? "Foo" : "Bar";
                     break;
@@ -75,43 +105,5 @@ public class FooBar {
             }
             System.out.println(result);
         }
-    }
-}
-
-class FooBarMain {
-    public static void main(String[] args) {
-        FooBar fB = new FooBar();
-        int number;
-        int version; // version of the program implementation
-        boolean run = true;
-
-        do {
-            System.out.println("Enter version: ");
-            version = new Scanner(System.in).nextInt();
-            if (version >= 0 && version <= 4) {
-                System.out.println("Enter number: ");
-                number = new Scanner(System.in).nextInt();
-                if (number > 0) {
-                    switch (version){
-                        case 1:
-                            fB.fooBarVersion1(number);
-                            run = false;
-                            break;
-                        case 2:
-                            fB.fooBarVersion2(number);
-                            run = false;
-                            break;
-                        case 3:
-                            fB.fooBarVersion3(number);
-                            run = false;
-                            break;
-                        case 4:
-                            fB.fooBarVersion4(number);
-                            run = false;
-                            break;
-                    }
-                } else System.out.println("Number less or equal 0. Try again.");
-            }else System.out.println("Value is 'version' invalid. Please choice value from 1 to 4.");
-        } while (run);
     }
 }
